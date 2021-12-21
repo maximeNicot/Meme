@@ -1,10 +1,17 @@
 <template>
-  <div class="meme">
-    <button class="btn-primary" v-on:click="greet">Another one</button>
-    <h1>Kanye West : {{msgK}}</h1>
-    <img alt="Meme" :src="img" width="500" height="600">
-   
-  </div>
+  <v-card width="750" class="mx-auto mt-5">
+  <v-card-title><h1>Lizafekuni</h1></v-card-title>
+  <v-divider></v-divider>
+    <h2>Kanye West : {{msgK}}</h2>
+    <v-row class="text-center">
+      <v-col cols="12">
+          <img alt="Meme" :src="img" width="550" height="650">
+      </v-col>
+    </v-row>
+      <v-card-actions>
+        <v-btn color="primary" elevation="2" v-on:click="greet">Another one</v-btn>
+      </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -13,7 +20,6 @@ export default {
   name: 'Meme',
   props: {
     msgK: String,
-    msgT: String,
     img: String
   },
   mounted () {

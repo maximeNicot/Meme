@@ -1,30 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" height="100">
-    <Meme/>
-
-  </div>
+  <v-app>
+    <v-main>
+      <Meme/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Meme from './components/Meme.vue'
+import Meme from './components/Meme';
 
 export default {
   name: 'App',
-  components: {
-    Meme
-  },
-   
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+     Meme
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
