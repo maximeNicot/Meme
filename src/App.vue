@@ -8,7 +8,7 @@
 
 <script>
 import Meme from './components/Meme.vue'
-
+//aa
 export default {
   name: 'App',
   components: {
