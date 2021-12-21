@@ -11,6 +11,13 @@
       <v-card-actions>
         <v-btn color="primary" elevation="2" v-on:click="greet">Another one</v-btn>
       </v-card-actions>
+
+      <v-divider></v-divider>
+
+    <h2>If you're bored, you can : {{msgB}}</h2>
+    <v-card-actions>
+        <v-btn color="primary" elevation="2" v-on:click="boring">Still bored !</v-btn>
+      </v-card-actions>
   </v-card>
 </template>
 
@@ -20,10 +27,12 @@ export default {
   name: 'Meme',
   props: {
     msgK: String,
+    msgB: String,
     img: String
   },
   mounted () {
     this.greet()
+    this.boring()
 
   },
 
@@ -41,6 +50,14 @@ export default {
       .get('https://api.kanye.rest/')
       .then(response => {
         this.msgK = response.data.quote
+        })
+    
+  },
+  boring: function () {
+    axios
+      .get('http://www.boredapi.com/api/activity/')
+      .then(response => {
+        this.msgB = response.data.activity
         })
     
   }
